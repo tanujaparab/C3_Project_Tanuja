@@ -62,5 +62,17 @@ public class Restaurant {
     public String getName() {
         return name;
     }
+   public int getPrice(List<Item> orderList) {
+        int orderValue = 0;
+
+        if(orderList.isEmpty())
+            throw new NoItemSelectedException("No Items Selected");
+
+        for(Item item: orderList) {
+            orderValue = orderValue + item.getPrice();
+        }
+        return orderValue;
+    }
 
 }
+
