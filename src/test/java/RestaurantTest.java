@@ -78,9 +78,12 @@ class RestaurantTest {
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
      @Test
     public void get_price_should_return_correct_price_of_food_items_when_called(){
-        List<Item> list = null;
-        List<Item> orderList = new ArrayList<>(list);
-        int orderValue = restaurant.getPrice(orderList);
+       restaurant.addToMenu("Burgers", 10);
+    restaurant.addToMenu("Fries",30);
+    List<Item> list = restaurant.getMenu();
+    List<Item> orderList = new ArrayList<>(list);
+    int orderValue = restaurant.getPrice(orderList);
+    assertThat(40, equalTo(orderValue));
     }
 
 }
