@@ -76,4 +76,10 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void get_price_should_return_correct_price_of_food_items_when_called(){
+        List<Item> list = null;
+        List<Item> orderList = new ArrayList<>(list);
+        int orderValue = restaurant.getPrice(orderList);
+    }     
 }
